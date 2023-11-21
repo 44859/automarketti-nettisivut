@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automarketti</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/logo.png" width="180" height="180"></a>
+    
+            <nav class="navbar">
+                <a href="index.html" style="--i:1;" >Home</a>
+                <a href="about.html" style="--i:2;">About</a>
+                <a href="gallery.html" style="--i:3;"class="active">Gallery</a>
+                <a href="contact.html" style="--i:4;">Contact</a>
+            </nav>
+    
+    </header>
+
+    <div class="g-container">
+
+        <h1>Image Gallery</h1>
+
+        <div class="image-container">
+            <div class="image"><img src="images/lotus-5407670_1280.jpg" alt=""></div>
+            <div class="image"><img src="images/auto-2179220_1280.jpg" alt=""></div>
+            <div class="image"><img src="images/car-604019_1280.jpg" alt=""></div>
+            <div class="image"><img src="images/car-1880381_1280.jpg" alt=""></div>
+            <div class="image"><img src="images/seat-cushion-1099616_1280.jpg" alt=""></div>
+            <div class="image"><img src="images/classic-car-362176_1280.jpg" alt=""></div>
+        </div>
+        <div class="popup-image">
+            <span>&times;</span>
+            <img src="images/auto-2179220_1280.jpg" alt="">
+        </div>
+    </div>
+
+    <script>
+    document.querySelectorAll('.image-container img').forEach(image =>{
+        image.onclick = () =>{
+            document.querySelector('.popup-image').style.display = 'block';
+            document.querySelector('.popup-image img').src = image.getAttribute('src');
+        }
+    });
+    
+    document.querySelector('.popup-image span').onclick = () =>{
+        document.querySelector('.popup-image').style.display = 'none';
+    }
+
+
+    
+    </script>
+    
+</body>
+</html>
