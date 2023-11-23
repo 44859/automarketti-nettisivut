@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo"><img src="images/logo-removebg-preview.png" width="180" height="180"></a>
+    
+            <nav class="navbar">
+                <a href="index.html" style="--i:1;">Home</a>
+                <a href="about.html" style="--i:2;">About</a>
+                <a href="gallery.html" style="--i:3;">Gallery</a>
+                <a href="contact.html" style="--i:4;" >Contact</a>
+                <a href="timer.html" style="--i:5;" class="active">Timer</a>
+            </nav>
+    
+    </header>
+
+    <div class="timer_box">
+        <h1>Current Time</h1>
+        <p id="timer">00:00:00</p>
+    </div>
+    
+    <script>
+        const getCurrentTime = () => {
+            const timer = document.querySelector('#timer');
+            setInterval(() => {
+                const dt = new Date();
+                const hours = dt.getHours().toString().padStart(2, '0');
+                const minutes = dt.getMinutes().toString().padStart(2, '0');
+                const seconds = dt.getSeconds().toString().padStart(2, '0');
+                timer.innerHTML = `${hours}:${minutes}:${seconds}`;
+            }, 1000);
+
+        };
+
+        getCurrentTime();
+    </script>
+</body>
+</html>
